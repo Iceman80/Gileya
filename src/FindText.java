@@ -15,8 +15,9 @@ public class FindText {
 
     public void findTxt() throws IOException {
         String endEn;
-        Scanner scannerUa = new Scanner(openUa.fileUa());
-        Scanner scannerEn = new Scanner(openEn.fileEn());
+        Scanner scannerUa = new Scanner(openUa.file("ЗМІСТ.txt"));
+        Scanner scannerEn = new Scanner(openEn.file("CONTENT.txt"));
+
         while (scannerUa.hasNext() && scannerEn.hasNext()) {
             String stUa = (scannerUa.nextLine());
             String stEn = (scannerEn.nextLine());

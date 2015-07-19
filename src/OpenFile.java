@@ -8,29 +8,16 @@ import java.io.IOException;
  */
 public class OpenFile {
 
-
-    public FileReader fileUa() throws IOException {
-        JFileChooser fileopenUa = new JFileChooser();
-        int retUa = fileopenUa.showDialog(null, "Открыть файл Зміст");
-        FileReader readerUa = null;
+    public FileReader file(String nameFale) throws IOException {
+        JFileChooser fileopen = new JFileChooser();
+        int retUa = fileopen.showDialog(null, nameFale);
+        FileReader reader = null;
         if (retUa == JFileChooser.APPROVE_OPTION) {
-            File fileUa = fileopenUa.getSelectedFile();
-            readerUa = new FileReader(fileUa.getCanonicalFile());
+            File fileUa = fileopen.getSelectedFile();
+            reader = new FileReader(fileUa.getCanonicalFile());
 
         }
-        return readerUa;
+        return reader;
 
-    }
-
-
-    public FileReader fileEn() throws IOException {
-        JFileChooser fileopenEn = new JFileChooser();
-        int retEn = fileopenEn.showDialog(null, "Открыть файл CONTENT.txt");
-        FileReader readerEn = null;
-        if (retEn == JFileChooser.APPROVE_OPTION) {
-            File fileEn = fileopenEn.getSelectedFile();
-            readerEn = new FileReader(fileEn.getCanonicalFile());
-        }
-        return readerEn;
     }
 }
