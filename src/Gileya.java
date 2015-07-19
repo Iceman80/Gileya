@@ -2,7 +2,7 @@
  * Created by ice on 11.07.15.
  */
 
-import java.io.*;
+import java.io.IOException;
 
 public class Gileya {
     public static void main(String[] args) throws IOException {
@@ -12,6 +12,5 @@ public class Gileya {
         for (String tmp : findText.text) {
             System.out.println(tmp);
         }
-        return;
     }
 }

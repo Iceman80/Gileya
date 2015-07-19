@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -10,13 +10,13 @@ import java.util.regex.Pattern;
 public class FindText {
 
     ArrayList<String> text = new ArrayList<>();
-    OpenFile openFileUa=new OpenFile();
-    OpenFile openFileEn=new OpenFile();
+    OpenFile openUa = new OpenFile();
+    OpenFile openEn = new OpenFile();
 
-    public void findTxt() throws FileNotFoundException {
+    public void findTxt() throws IOException {
         String endEn;
-        Scanner scannerUa = new Scanner(openFileUa.fileUa());
-        Scanner scannerEn = new Scanner(openFileEn.fileEn());
+        Scanner scannerUa = new Scanner(openUa.fileUa());
+        Scanner scannerEn = new Scanner(openEn.fileEn());
         while (scannerUa.hasNext() && scannerEn.hasNext()) {
             String stUa = (scannerUa.nextLine());
             String stEn = (scannerEn.nextLine());
