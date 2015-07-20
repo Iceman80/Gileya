@@ -27,7 +27,6 @@ public class FindText {
             Pattern patern1En = Pattern.compile("[A-Z]\\.\\s[A-Z]\\.\\s");
             Matcher mat1En = patern1En.matcher(stEn);
 
-
             Pattern patern2 = Pattern.compile("[А-Я,A-Z,І,Є]\\.\\s");
             Matcher mat2 = patern2.matcher(stUa);
             Pattern patern2En = Pattern.compile("[A-Z]\\.\\s");
@@ -52,6 +51,7 @@ public class FindText {
                     String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 }
+
             } else if (mat2.find()) {
                 String start = stUa.substring(0, mat2.end());
                 String endUa = stUa.substring(mat2.end());
