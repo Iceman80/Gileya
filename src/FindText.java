@@ -27,11 +27,11 @@ public class FindText {
             Pattern patern1En = Pattern.compile("[A-Z,А-Я]\\.\\s[A-Z,А-Я]\\.\\s");
             Matcher mat1En = patern1En.matcher(stEn);
 
-            Pattern patern2 = Pattern.compile("[А-Я,A-Z,І,Є,-]\\.\\s");
+            Pattern patern2 = Pattern.compile("[А-Я,A-Z,І,Є]\\.\\s");
             Matcher mat2 = patern2.matcher(stUa);
-            Pattern patern2En = Pattern.compile("[A-Z,-,А-Я]\\.\\s");
+            Pattern patern2En = Pattern.compile("[A-Z,А-Я]\\.\\s");
             Matcher mat2En = patern2En.matcher(stEn);
-            Pattern patern3En = Pattern.compile("[A-Z][a-z]\\.\\s");
+            Pattern patern3En = Pattern.compile("[A-Z,А-Я][a-z,а-я]\\.\\s");
             Matcher mat3En = patern3En.matcher(stEn);
 
             if (mat1.find()) {
