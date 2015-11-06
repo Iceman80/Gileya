@@ -22,16 +22,16 @@ public class FindText {
             String stUa = (scannerUa.nextLine());
             String stEn = (scannerEn.nextLine());
 
-            Pattern patern1 = Pattern.compile("[А-Я,І,Є,A-Z]\\.\\s[А-Я,A-Z,І,Є]\\.\\s");
+            Pattern patern1 = Pattern.compile("[А-Я,І,Є,A-Z]\\.\\s[А-Я,A-Z,І,Є]\\.\\s"); //Поиск инициалов имени и отчества Ua
             Matcher mat1 = patern1.matcher(stUa);
-            Pattern patern1En = Pattern.compile("[A-Z,А-Я]\\.\\s[A-Z,А-Я]\\.\\s");
+            Pattern patern1En = Pattern.compile("[A-Z,А-Я]\\.\\s[A-Z,А-Я]\\.\\s"); //Поиск инициалов имени и отчества En
             Matcher mat1En = patern1En.matcher(stEn);
 
-            Pattern patern2 = Pattern.compile("[А-Я,A-Z,І,Є]\\.\\s");
+            Pattern patern2 = Pattern.compile("[А-Я,A-Z,І,Є]\\.\\s");//Поиск инициалов имени без отчества Ua
             Matcher mat2 = patern2.matcher(stUa);
-            Pattern patern2En = Pattern.compile("[A-Z,А-Я]\\.\\s");
+            Pattern patern2En = Pattern.compile("[A-Z,А-Я]\\.\\s");//Поиск инициалов имени без отчества En
             Matcher mat2En = patern2En.matcher(stEn);
-            Pattern patern3En = Pattern.compile("[A-Z,А-Я][a-z,а-я]\\.\\s");
+            Pattern patern3En = Pattern.compile("[A-Z,А-Я][a-z,а-я]\\.\\s");//Поиск инициалов имени 2 знака без отчества En
             Matcher mat3En = patern3En.matcher(stEn);
 
             if (mat1.find()) {
@@ -67,7 +67,7 @@ public class FindText {
                     String fin = start + "[" + endUa + "]{" + endEn + "} ";
                     text.add(fin);
                 }
-            } else {
+            } else { //если что то не так
                 String fin = "!" + stUa + "}{" + stEn + "}";
                 text.add(fin);
             }
