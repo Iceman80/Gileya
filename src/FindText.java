@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,13 +11,13 @@ import java.util.regex.Pattern;
 public class FindText {
 
     ArrayList<String> text = new ArrayList<>();
-    OpenFile openUa = new OpenFile();
-    OpenFile openEn = new OpenFile();
+//    OpenFile openUa = new OpenFile();
+//    OpenFile openEn = new OpenFile();
 
     public void findTxt() throws IOException {
         String endEn;
-        Scanner scannerUa = new Scanner(openUa.file("1.txt"));
-        Scanner scannerEn = new Scanner(openEn.file("2.txt"));
+        Scanner scannerUa = new Scanner(new File("/Users/ice/Desktop/Gileya/1.txt"));
+        Scanner scannerEn = new Scanner(new File("/Users/ice/Desktop/Gileya/2.txt"));
 
         while (scannerUa.hasNext() && scannerEn.hasNext()) {
             String stUa = (scannerUa.nextLine());
@@ -39,15 +40,15 @@ public class FindText {
                 String endUa = stUa.substring(mat1.end());
                 if (mat1En.find()) {
                     endEn = stEn.substring(mat1En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
+                    String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 } else if (mat2En.find()) {
                     endEn = stEn.substring(mat2En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
+                    String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 } else if (mat3En.find()) {
                     endEn = stEn.substring(mat3En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
+                    String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 }
 
@@ -56,15 +57,15 @@ public class FindText {
                 String endUa = stUa.substring(mat2.end());
                 if (mat1En.find()) {
                     endEn = stEn.substring(mat1En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
+                    String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 } else if (mat2En.find()) {
                     endEn = stEn.substring(mat2En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
+                    String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 } else if (mat3En.find()) {
                     endEn = stEn.substring(mat3En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
+                    String fin = start + "[" + endUa + "]{" + endEn + "}";
                     text.add(fin);
                 }
             } else { //если что то не так
