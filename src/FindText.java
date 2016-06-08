@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class FindText {
 
     ArrayList<String> text = new ArrayList<>();
+
 //    OpenFile openUa = new OpenFile();
 //    OpenFile openEn = new OpenFile();
 
