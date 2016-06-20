@@ -58,15 +58,15 @@ public class FindText {
                 String endUa = stUa.substring(mat2.end());
                 if (mat1En.find()) {
                     endEn = stEn.substring(mat1En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "}";
+                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
                     text.add(fin);
                 } else if (mat2En.find()) {
                     endEn = stEn.substring(mat2En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "}";
+                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
                     text.add(fin);
                 } else if (mat3En.find()) {
                     endEn = stEn.substring(mat3En.end());
-                    String fin = start + "[" + endUa + "]{" + endEn + "}";
+                    String fin = start + "[" + endUa + "]{" + endEn + "} ";
                     text.add(fin);
                 }
             } else { //если что то не так
